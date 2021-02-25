@@ -33,6 +33,7 @@ releaseClient() {
 
 Future<QueryResult> getRepository(String owner, String name) async {
   final QueryOptions _options = QueryOptions(
+      // ignore: deprecated_member_use
       document: readRepository,
       variables: <String, dynamic>{
         'owner': owner,
@@ -52,6 +53,7 @@ Future<QueryResult> getTrendUser(String location, {String cursor}) async {
           'after': cursor,
         };
   final QueryOptions _options = QueryOptions(
+      // ignore: deprecated_member_use
       document: cursor == null ? readTrendUser : readTrendUserByCursor,
       variables: variables,
       fetchPolicy: FetchPolicy.noCache);
